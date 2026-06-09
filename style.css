@@ -1,0 +1,135 @@
+/* ------------------------------------- */
+/* Global Settings & Branding Colors     */
+/* ------------------------------------- */
+:root {
+    --moroccan-red: #c1272d;
+    --moroccan-green: #006233;
+    --gold-accent: #d4af37;
+    --dark-bg: #0d1117;
+    --card-bg: #161b22;
+    --text-light: #f0f6fc;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+    font-family: 'Rajdhani', sans-serif;
+    overflow-x: hidden;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+.en-font { font-family: 'Orbitron', sans-serif; }
+
+/* Moroccan Zellige Subtle Background Effect */
+.zellige-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: 
+        linear-gradient(30deg, rgba(193, 39, 45, 0.01) 12%, transparent 12.5%, transparent 87%, rgba(193, 39, 45, 0.01) 87.5%, rgba(193, 39, 45, 0.01)),
+        linear-gradient(150deg, rgba(193, 39, 45, 0.01) 12%, transparent 12.5%, transparent 87%, rgba(193, 39, 45, 0.01) 87.5%, rgba(193, 39, 45, 0.01)),
+        linear-gradient(60deg, rgba(0, 98, 51, 0.01) 25%, transparent 25.5%, transparent 75%, rgba(0, 98, 51, 0.01) 75%, rgba(0, 98, 51, 0.01));
+    background-size: 40px 70px;
+    z-index: -1;
+}
+
+/* Common Sections Layout */
+.section-padding { padding: 80px 5%; }
+.bg-darker { background-color: #070a0e; }
+.text-center { text-align: center; }
+.section-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 50px;
+    color: var(--text-light);
+    border-left: 5px solid var(--moroccan-red);
+    padding-left: 15px;
+    display: inline-block;
+}
+
+/* ------------------------------------- */
+/* Header & Navigation                   */
+/* ------------------------------------- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background: rgba(13, 17, 23, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid var(--moroccan-red);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.logo { font-size: 1.6rem; font-weight: 900; letter-spacing: 1px; }
+.logo .dot { color: var(--moroccan-green); }
+nav ul { list-style: none; display: flex; gap: 25px; }
+nav ul li a { color: var(--text-light); text-decoration: none; font-weight: 700; transition: color 0.3s; text-transform: uppercase; font-size: 0.95rem; }
+nav ul li a:hover { color: var(--gold-accent); }
+
+/* ------------------------------------- */
+/* Hero Section                          */
+/* ------------------------------------- */
+.hero { min-height: 80vh; display: flex; justify-content: center; align-items: center; text-align: center; padding: 20px; }
+.hero-content { max-width: 750px; }
+.hero h1 { font-size: 3.5rem; font-weight: 900; margin-bottom: 20px; text-shadow: 0 0 20px rgba(193, 39, 45, 0.3); }
+.highlight-red { color: var(--moroccan-red); }
+.description { font-size: 1.35rem; color: #a3b3c6; margin-bottom: 40px; font-weight: 500; }
+
+.buttons { display: flex; justify-content: center; gap: 20px; }
+.btn { padding: 14px 30px; border-radius: 6px; text-decoration: none; font-weight: 700; font-size: 1.1rem; transition: all 0.3s ease; text-transform: uppercase; }
+.btn-primary { background: linear-gradient(45deg, var(--moroccan-red), #e63946); color: white; box-shadow: 0 4px 15px rgba(193, 39, 45, 0.4); }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(193, 39, 45, 0.6); }
+.btn-secondary { background: transparent; border: 2px solid var(--moroccan-green); color: var(--text-light); }
+.btn-secondary:hover { background: var(--moroccan-green); color: white; }
+
+/* ------------------------------------- */
+/* Products Grid Cards                   */
+/* ------------------------------------- */
+.products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+.product-card { background: var(--card-bg); border-radius: 12px; overflow: hidden; border: 1px solid #21262d; transition: transform 0.3s, border-color 0.3s; }
+.product-card:hover { transform: translateY(-5px); border-color: var(--gold-accent); }
+.product-image img { width: 100%; height: 220px; object-fit: cover; border-bottom: 2px solid #21262d; }
+.product-info { padding: 25px; }
+.badge { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; margin-bottom: 15px; text-transform: uppercase; }
+.badge-game { background: rgba(193, 39, 45, 0.2); color: #ff4d4d; border: 1px solid var(--moroccan-red); }
+.badge-app { background: rgba(0, 98, 51, 0.2); color: #39e68d; border: 1px solid var(--moroccan-green); }
+.product-info h3 { font-family: 'Orbitron', sans-serif; font-size: 1.4rem; margin-bottom: 10px; }
+.product-info p { color: #8b949e; font-size: 1rem; margin-bottom: 20px; font-weight: 500; }
+.btn-download { color: var(--gold-accent); text-decoration: none; font-weight: bold; display: inline-block; transition: color 0.2s; font-size: 1.05rem; }
+.btn-download:hover { color: white; text-shadow: 0 0 10px var(--gold-accent); }
+
+/* ------------------------------------- */
+/* Videos, Updates & Support             */
+/* ------------------------------------- */
+.videos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; max-width: 500px; margin: 0 auto; }
+.video-box { background: var(--card-bg); padding: 15px; border-radius: 10px; border: 1px solid #21262d; text-align: center; }
+.video-box h4 { margin-top: 15px; font-size: 1.1rem; font-family: 'Orbitron', sans-serif; }
+
+.news-container { background: var(--card-bg); padding: 30px; border-radius: 12px; border-left: 4px solid var(--moroccan-green); }
+.news-date { color: var(--gold-accent); font-size: 0.85rem; font-weight: bold; }
+.news-card h3 { margin: 10px 0; font-size: 1.5rem; font-family: 'Orbitron', sans-serif; }
+.news-card p { color: #8b949e; font-size: 1.05rem; font-weight: 500; }
+.support-text { font-size: 1.25rem; color: #8b949e; margin-bottom: 30px; font-weight: 500; }
+
+/* ------------------------------------- */
+/* Full Mobile Responsiveness            */
+/* ------------------------------------- */
+@media (max-width: 768px) {
+    header { flex-direction: column; gap: 15px; padding: 15px; text-align: center; }
+    nav ul { gap: 15px; justify-content: center; flex-wrap: wrap; }
+    .hero h1 { font-size: 2.2rem; }
+    .description { font-size: 1.1rem; }
+    .buttons { flex-direction: column; align-items: center; }
+    .btn { width: 100%; max-width: 280px; }
+    .section-padding { padding: 50px 20px; }
+}
